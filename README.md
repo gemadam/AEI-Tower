@@ -1,5 +1,7 @@
 # AEI Tower
 
+##Description of the project
+
 AEI Tower is a Icy Tower clone inspired by the day-to-day reality of students of the [Faculty Of Automatic Control, Electronics And Computer Science](https://www.polsl.pl/rau/en). 
 
 ## Task analysis
