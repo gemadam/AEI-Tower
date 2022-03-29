@@ -2,7 +2,8 @@
 
 ## Description of the project
 
-AEI Tower is a Icy Tower clone inspired by the day-to-day reality of students of the [Faculty Of Automatic Control, Electronics And Computer Science](https://www.polsl.pl/rau/en). 
+AEI Tower is a Icy Tower remake inspired by the day-to-day reality of students of the [Faculty Of Automatic Control, Electronics And Computer Science](https://www.polsl.pl/rau/en). 
+The game consists in controlling a character representing a student of the AEI faculty as he/she makes his/her way to the top of the Mage Tower by jumping on successive stairs and advancing to successive floors of the faculty. The character is controlled with the keyboard.
 
 ## Task analysis
 
