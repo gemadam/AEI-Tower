@@ -3,7 +3,7 @@
 ## Description of the project
 
 AEI Tower is a Icy Tower remake inspired by the day-to-day reality of students of the [Faculty Of Automatic Control, Electronics And Computer Science](https://www.polsl.pl/rau/en). 
-The game consists in controlling a character representing a student of the AEI faculty as he/she makes his/her way to the top of the Mage Tower by jumping on successive stairs and advancing to successive floors of the faculty. The character is controlled with the keyboard.
+The game consists in controlling a character representing a student of the AEI faculty as he/she makes his/her way to the top of the Mage Tower by jumping on successive stairs and advancing to successive floors of the faculty. The character is controlled with the keyboard. It is a platform game set in a tower, where the player's goal is to jump from one "floor" to the next and go as high as possible without falling and plunging off the screen.
 
 Platforms are grouped to levels - each in distinct color according to the colors of the faculty floors.
 On each platform there is randomly generated challenge which student faces in his day-to-day life (such as rejected report or unexpected quiz on the platform). Player has to collect 30 ECTS on each floor to level up. If player falls before collecting 26 ECTS on the level the game is over, otherwise he can use conditional pass, and collect missing points in order to complete level.
