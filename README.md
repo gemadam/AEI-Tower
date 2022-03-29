@@ -33,6 +33,16 @@ Project mostly utilize the knowledge from laboratories about collision detection
 | Adam Gembala       | Theoretical analysis of the project | Beta version of game logic | Final version of game logic |
 | Robert Lotawiec    | Theoretical analysis of the project | Beta version of assets     | Final version of assets     |
 
-## Userful links
+## Useful links
+
+### Project organization
 
 [Jira Project](https://aei-tower.atlassian.net)
+
+### Resources
+
+[Postacie Icy Tower](https://download.icy.pl/postacie1.php)
+
+[Forum Icy Tower](https://forum.icy.pl)
+
+[Wikipedia](https://pl.wikipedia.org/wiki/Icy_Tower)
