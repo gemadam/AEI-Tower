@@ -20,3 +20,7 @@ Project mostly utilize the knowledge from laboratories about collision detection
 | Malika Uskembayeva | Theoretical analysis of the project | Beta version of game logic | Final version of game logic |
 | Adam Gembala       | Theoretical analysis of the project | Beta version of game logic | Final version of game logic |
 | Robert Lotawiec    | Theoretical analysis of the project | Beta version of assets     | Final version of assets     |
+
+## Userful links
+
+[Jira Project](https://aei-tower.atlassian.net)
