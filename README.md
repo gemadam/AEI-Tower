@@ -8,11 +8,17 @@ The game consists in controlling a character representing a student of the AEI f
 Platforms are grouped to levels - each in distinct color according to the colors of the faculty floors.
 On each platform there is randomly generated challenge which student faces in his day-to-day life (such as rejected report or unexpected quiz on the platform). Player has to collect 30 ECTS on each floor to level up. If player falls before collecting 26 ECTS on the level the game is over, otherwise he can use conditional pass, and collect missing points in order to complete level.
 
+![AEI Tower concept](/Docs/Img/AEI-Tower-concept.png)
+
 ## Task analysis
 
 ### Theoretical basis of the problem
 
+The movement of the character on the floor will be described by the sum of two vectors - horizontal and vertical. Sum of this two movements will be maginfied by some factor which will depend on the length of the period of pressing the space button.
 
+![Sum of the vectors](/Docs/Img/400px-Perpendicular_Vector_Addition.jpg)
+
+While in the air player will only be able to control horizontal movement.
 
 ### Computer graphics topics
 
