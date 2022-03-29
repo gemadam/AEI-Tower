@@ -33,6 +33,15 @@ Project mostly utilize the knowledge from laboratories about collision detection
 | Adam Gembala       | Theoretical analysis of the project | Beta version of game logic | Final version of game logic |
 | Robert Lotawiec    | Theoretical analysis of the project | Beta version of assets     | Final version of assets     |
 
+
+## Project organization
+
+### Workflow
+
+![Workflow of the project](/Docs/Img/ProjectWorkflow.png)
+
+
+
 ## Useful links
 
 ### Project organization
