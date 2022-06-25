@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
         _rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // We do physics in FixedUpdate
+    // FixedUpdate for physics
     void FixedUpdate()
     {
         _moveInput = Input.GetAxis("Horizontal");
