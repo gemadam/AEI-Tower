@@ -9,6 +9,11 @@ public class MainMenu : MonoBehaviour
         GameManager.OnNewGame();
     }
 
+    public void OnMainMenuClick()
+    {
+        GameManager.OnMainMenu();
+    }
+
     public void OnExitClick()
     {
         Application.Quit();

@@ -5,20 +5,9 @@ public class CollisionManager : MonoBehaviour
     public GameManager GameManager;
     public ScoreManager ScoreManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnPlayerCollisionWithPlatform(Platform platform, Player player)
     {
+        Debug.Log("Player collided with platform.");
         ScoreManager.AddPoints(platform.PointsForPlatform);
 
         platform.PointsForPlatform = 0;
@@ -26,6 +15,7 @@ public class CollisionManager : MonoBehaviour
 
     public void OnPlayerCollisionWithDestroyer(Destroyer destroyer, Player player)
     {
+        Debug.Log("Player collided with destroyer.");
         GameManager.OnGameOver();
     }
 }

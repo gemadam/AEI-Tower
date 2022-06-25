@@ -259,7 +259,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153584259}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -742,7 +742,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633006234}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -1075,8 +1075,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977456445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42517424, y: -14.2, z: 18.8631}
-  m_LocalScale: {x: 2.051362, y: 0.62877, z: 0.62877}
+  m_LocalPosition: {x: -0.55141, y: -14.2, z: 18.8631}
+  m_LocalScale: {x: 2.4616346, y: 0.62877, z: 0.62877}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -1191,8 +1191,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283389167
+  m_fontColor: {r: 0.93725497, g: 0.32941177, b: 0.30980393, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2210,6 +2210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4809306601818452779, guid: b64c15181e96e7240b8ceea5f7435b44, type: 3}
+      propertyPath: JumpSpeed
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 6513083075472756569, guid: b64c15181e96e7240b8ceea5f7435b44, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2249,7 +2253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466797983740458179, guid: b0b2224ad3e09d2449fa503d3113169e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 21.035204
+      value: 23.138725
       objectReference: {fileID: 0}
     - target: {fileID: 6466797983740458179, guid: b0b2224ad3e09d2449fa503d3113169e, type: 3}
       propertyPath: m_LocalScale.y
@@ -2257,7 +2261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6466797983740458179, guid: b0b2224ad3e09d2449fa503d3113169e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.68
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 6466797983740458179, guid: b0b2224ad3e09d2449fa503d3113169e, type: 3}
       propertyPath: m_LocalPosition.y

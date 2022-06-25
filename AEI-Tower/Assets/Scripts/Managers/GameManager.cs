@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OnMainMenu();
+    }
+
+    public void OnMainMenu()
+    {
         EntitiesManager.Player.CanBeControlled = false;
         EntitiesManager.Camera.EnableMovement = false;
 

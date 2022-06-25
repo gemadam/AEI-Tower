@@ -4,23 +4,40 @@ public class Player : MonoBehaviour
 {
     public bool CanBeControlled = true;
 
-    private Rigidbody2D _rigidBody;
-    private float _moveInput;
-    private float _speed = 10f;
+    public float VerticalSpeed = 10f;
+    public float JumpSpeed = 100f;
 
-    void Start()
+    private Rigidbody2D _rigidBody;
+
+    private void Start()
     {
-        _rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody = this.GetComponent<Rigidbody2D>();
     }
 
     // FixedUpdate for physics
     void FixedUpdate()
     {
         if (CanBeControlled)
-        {
-            _moveInput = Input.GetAxis("Horizontal");
+            MovementLogic();
+    }
 
-            _rigidBody.velocity = new Vector2(_moveInput * _speed, _rigidBody.velocity.y);
+    void MovementLogic()
+    {
+        var position = transform.position;
+
+        if (Input.GetKey("w") && _rigidBody.velocity.y == 0)
+        {
+            _rigidBody.AddForce(Vector3.up * JumpSpeed);
         }
+        if (Input.GetKey("d"))
+        {
+            position.x += VerticalSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey("a"))
+        {
+            position.x -= VerticalSpeed * Time.deltaTime;
+        }
+
+        transform.position = position;
     }
 }

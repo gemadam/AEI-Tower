@@ -9,14 +9,11 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        var rigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
-
-        // When player is falling down
-        if (rigidBody != null && rigidBody.velocity.y <= 0)
+        if (collision.gameObject.GetComponent<Player>() != null)
         {
-            rigidBody.AddForce(Vector3.up * BounceFactor);
+            var player = collision.gameObject.GetComponent<Player>();
 
-            CollisionManager.OnPlayerCollisionWithPlatform(this, null);
+            CollisionManager.OnPlayerCollisionWithPlatform(this, player);
         }
     }
 }
