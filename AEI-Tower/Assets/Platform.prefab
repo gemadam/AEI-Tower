@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6466797983740458179}
   - component: {fileID: 6466797983740458176}
   - component: {fileID: 6466797983740458177}
+  - component: {fileID: 6460348610658280132}
   - component: {fileID: 6466797983740458190}
-  - component: {fileID: 6466797983740458191}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -113,6 +113,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.2897453}
   m_EdgeRadius: 0
+--- !u!114 &6460348610658280132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6466797983740458188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb34ca91ba7ecf4c87f4219b91c61f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionManager: {fileID: 0}
+  BounceFactor: 600
+  PointsForPlatform: 1
 --- !u!251 &6466797983740458190
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -132,16 +147,3 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &6466797983740458191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6466797983740458188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bff1733960a6d0d4196c35b93c9fc190, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BounceFactor: 700
