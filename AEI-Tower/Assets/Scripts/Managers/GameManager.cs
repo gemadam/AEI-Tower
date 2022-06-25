@@ -10,9 +10,8 @@ public class GameManager : MonoBehaviour
         UIManager.SetView(EnumUIView.Game);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnGameOver()
     {
-
+        UIManager.SetView(EnumUIView.GameOver);
     }
 }
