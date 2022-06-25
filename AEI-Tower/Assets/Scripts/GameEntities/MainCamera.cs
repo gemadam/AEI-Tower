@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
+    public bool EnableMovement = true;
+
     public float CameraSpeed = 0.01f;
 
     // Start is called before the first frame update
@@ -13,7 +15,7 @@ public class MainCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Camera.current != null)
+        if (Camera.current != null && EnableMovement)
         {
             Camera.current.transform.Translate(new Vector3(0f, CameraSpeed, 0f));
         }

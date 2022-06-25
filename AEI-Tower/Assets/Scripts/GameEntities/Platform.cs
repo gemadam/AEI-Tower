@@ -7,18 +7,6 @@ public class Platform : MonoBehaviour
     public float BounceFactor = 600f;
     public int PointsForPlatform = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var rigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
