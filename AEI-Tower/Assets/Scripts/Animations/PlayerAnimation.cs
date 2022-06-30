@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
@@ -14,11 +12,11 @@ public class PlayerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _leftLeg = GameObject.Find("Player/LeftFoot");
-        _rightLeg = GameObject.Find("Player/RightFoot");
-        
-        _leftArm = GameObject.Find("Player/LeftArm");
-        _rightArm = GameObject.Find("Player/RightArm");
+        _leftLeg = GameObject.Find("Player/Body/LeftFoot");
+        _rightLeg = GameObject.Find("Player/Body/RightFoot");
+
+        _leftArm = GameObject.Find("Player/Body/LeftArm");
+        _rightArm = GameObject.Find("Player/Body/RightArm");
     }
 
     // Update is called once per frame
@@ -26,18 +24,18 @@ public class PlayerAnimation : MonoBehaviour
     {
         _frame++;
 
-        if(_frame < 120)
+        if (_frame < 120)
         {
-            _leftLeg.transform.Rotate(0, 0, -1);
-            _rightLeg.transform.Rotate(0, 0, 1);
+            _leftLeg.transform.Rotate(0, 0, -0.75f);
+            _rightLeg.transform.Rotate(0, 0, 0.75f);
 
             _leftArm.transform.Rotate(0, 0, -1);
             _rightArm.transform.Rotate(0, 0, 1);
         }
-        else if(_frame < 240)
+        else if (_frame < 240)
         {
-            _leftLeg.transform.Rotate(0, 0, 1);
-            _rightLeg.transform.Rotate(0, 0, -1);
+            _leftLeg.transform.Rotate(0, 0, 0.75f);
+            _rightLeg.transform.Rotate(0, 0, -0.75f);
 
             _leftArm.transform.Rotate(0, 0, 1);
             _rightArm.transform.Rotate(0, 0, -1);

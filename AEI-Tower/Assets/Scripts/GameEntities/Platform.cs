@@ -4,7 +4,7 @@ public class Platform : MonoBehaviour
 {
     public CollisionManager CollisionManager;
 
-    public float BounceFactor = 600f;
+    public bool CanBeDestroyed = true;
     public int PointsForPlatform = 1;
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -1,21 +1,14 @@
-using TMPro;
+using Assets.Scripts.UI;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text EctsPoints;
+    public GameUI GameUI;
     private int _points = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        EctsPoints.SetText(_points.ToString());
+        GameUI.DisplayPoints(_points);
     }
 
     public void AddPoints(int points)

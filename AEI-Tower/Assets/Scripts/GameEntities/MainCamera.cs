@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public bool EnableMovement = true;
+    public bool EnableMovement = false;
 
     public float CameraSpeed = 0.01f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public Vector3 InitialPosition = new Vector3(0f, 0f, -20f);
 
     // Update is called once per frame
     void Update()
@@ -19,5 +14,13 @@ public class MainCamera : MonoBehaviour
         {
             Camera.current.transform.Translate(new Vector3(0f, CameraSpeed, 0f));
         }
+    }
+
+    public void ResetState()
+    {
+        if (Camera.main == null)
+            return;
+
+        Camera.main.transform.position = InitialPosition;
     }
 }

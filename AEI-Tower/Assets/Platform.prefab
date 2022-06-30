@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6466797983740458188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01, y: -6.61, z: 0}
-  m_LocalScale: {x: 1.675, y: 0.35, z: 1}
+  m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -126,8 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionManager: {fileID: 0}
-  BounceFactor: 600
-  PointsForPlatform: 1
+  CanBeDestroyed: 1
 --- !u!251 &6466797983740458190
 PlatformEffector2D:
   m_ObjectHideFlags: 0

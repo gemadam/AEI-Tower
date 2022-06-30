@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,6 +6,7 @@ public class GameManager : MonoBehaviour
     public UIManager UIManager;
 
     public EntitiesManager EntitiesManager;
+    public CollisionManager CollisionManager;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     public void OnMainMenu()
     {
+        EntitiesManager.Player.ResetState();
+        EntitiesManager.Camera.ResetState();
+
         EntitiesManager.Player.CanBeControlled = false;
         EntitiesManager.Camera.EnableMovement = false;
 
@@ -23,6 +28,14 @@ public class GameManager : MonoBehaviour
     public void OnNewGame()
     {
         UIManager.SetView(EnumUIView.Game);
+
+        EntitiesManager.RemovePlatforms();
+
+        foreach (var i in Enumerable.Range(0, 5))
+            EntitiesManager.SpawnPlatform();
+
+        EntitiesManager.Player.ResetState();
+        EntitiesManager.Camera.ResetState();
 
         EntitiesManager.Player.CanBeControlled = true;
         EntitiesManager.Camera.EnableMovement = true;

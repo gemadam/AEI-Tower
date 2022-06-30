@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    public GameObject Player;
-    public GameObject PlatformPrefab;
     public CollisionManager CollisionManager;
 
     public bool EnableDestroyer = true;
-
-    private GameObject Platform;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,11 +20,7 @@ public class Destroyer : MonoBehaviour
         {
             var platform = collision.gameObject.GetComponent<Platform>();
 
-            var newPlatformPosition = new Vector2(Random.Range(-7f, 7f), platform.transform.position.y + 2);
-
-            Platform = Instantiate(PlatformPrefab, newPlatformPosition, Quaternion.identity);
-
-            Destroy(platform);
+            CollisionManager.OnPlatformCollisionWithDestroyer(this, platform);
         }
     }
 }

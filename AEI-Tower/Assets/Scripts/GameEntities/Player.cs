@@ -1,43 +1,56 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
     public bool CanBeControlled = true;
 
-    public float VerticalSpeed = 10f;
-    public float JumpSpeed = 100f;
+    public Vector2 Speed = new Vector2(15, 35);
+    public Vector2 InitialPosition = new Vector2(4.1638f, -1.91f);
 
     private Rigidbody2D _rigidBody;
+    private Vector2 _movement = new Vector2();
+
 
     private void Start()
     {
         _rigidBody = this.GetComponent<Rigidbody2D>();
     }
 
-    // FixedUpdate for physics
-    void FixedUpdate()
+    void Update()
     {
         if (CanBeControlled)
             MovementLogic();
     }
 
+    private void FixedUpdate()
+    {
+        _rigidBody.velocity = _movement;
+    }
+
     void MovementLogic()
     {
-        var position = transform.position;
+        _movement = _rigidBody.velocity;
 
-        if (Input.GetKey("w") && _rigidBody.velocity.y == 0)
+        if (Input.GetKey(KeyCode.W) && _movement.y == 0)
         {
-            _rigidBody.AddForce(Vector3.up * JumpSpeed);
+            _movement.y = Speed.y;
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.D))
         {
-            position.x += VerticalSpeed * Time.deltaTime;
+            _movement.x = Speed.x;
         }
-        if (Input.GetKey("a"))
+        if (Input.GetKey(KeyCode.A))
         {
-            position.x -= VerticalSpeed * Time.deltaTime;
+            _movement.x = -Speed.x;
         }
+    }
 
-        transform.position = position;
+    public void ResetState()
+    {
+        if (_rigidBody == null)
+            return;
+
+        _rigidBody.position = InitialPosition;
     }
 }
