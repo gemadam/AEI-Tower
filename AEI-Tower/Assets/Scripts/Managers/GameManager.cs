@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.SetView(EnumUIView.Game);
 
-        EntitiesManager.RemovePlatforms();
+        EntitiesManager.ResetState();
 
         foreach (var i in Enumerable.Range(0, 5))
             EntitiesManager.SpawnPlatform();

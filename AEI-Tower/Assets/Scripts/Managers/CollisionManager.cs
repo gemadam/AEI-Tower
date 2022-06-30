@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
@@ -5,13 +6,15 @@ public class CollisionManager : MonoBehaviour
     public GameManager GameManager;
     public ScoreManager ScoreManager;
 
-    public void OnPlayerCollisionWithPlatform(Platform platform, Player player)
+    public void OnPlayerCollisionWithPlatform(Platform platform, Player player, Collision2D collision)
     {
         Debug.Log("Player collided with platform.");
 
-        if (platform.PointsForPlatform != 0)
+        if (collision.relativeVelocity.y <= 0f && platform.PointsForPlatform != 0)
         {
             ScoreManager.AddPoints(platform.PointsForPlatform);
+            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min(Math.Max(ScoreManager.Points / 10, 1) * 3, 20);
+
             GameManager.EntitiesManager.SpawnPlatform();
 
             platform.PointsForPlatform = 0;

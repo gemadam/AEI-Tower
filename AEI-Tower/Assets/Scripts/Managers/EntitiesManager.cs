@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EntitiesManager : MonoBehaviour
 {
@@ -14,12 +16,14 @@ public class EntitiesManager : MonoBehaviour
     Rect _platformSpawningBounds = new Rect(-20, -5, 40, 5);
 
 
-    public void RemovePlatforms()
+    public void ResetState()
     {
         foreach (GameObject p in Platforms)
             Destroy(p);
 
         Platforms.Clear();
+
+        _platformSpawningBounds = new Rect(-20, -5, 40, 5);
     }
 
     public void RemovePlatform(GameObject platform)
@@ -30,15 +34,19 @@ public class EntitiesManager : MonoBehaviour
 
     public void SpawnPlatform()
     {
-        var position = new Vector2(Random.Range(_platformSpawningBounds.xMin, _platformSpawningBounds.xMax), Random.Range(_platformSpawningBounds.yMin, _platformSpawningBounds.yMax));
+        _lastPosition.x = Random.Range(
+            Math.Max(_platformSpawningBounds.xMin, _lastPosition.x - 10),
+            Math.Min(_platformSpawningBounds.xMax, _lastPosition.x + 10)
+        );
+        _lastPosition.y = Random.Range(_platformSpawningBounds.yMin, _platformSpawningBounds.yMax);
 
-        var gameObject = Instantiate(PlatformPrefab, position, Quaternion.identity);
+        var gameObject = Instantiate(PlatformPrefab, _lastPosition, Quaternion.identity);
 
         gameObject.GetComponent<Platform>().CollisionManager = GameManager.CollisionManager;
 
         Platforms.Add(gameObject);
 
-        _platformSpawningBounds.yMin += 5;
-        _platformSpawningBounds.yMax += 5;
+        _platformSpawningBounds.yMin = _lastPosition.y + 4;
+        _platformSpawningBounds.yMax = _lastPosition.y + 9;
     }
 }

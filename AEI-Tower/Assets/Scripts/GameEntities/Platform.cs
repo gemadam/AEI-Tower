@@ -13,7 +13,7 @@ public class Platform : MonoBehaviour
         {
             var player = collision.gameObject.GetComponent<Player>();
 
-            CollisionManager.OnPlayerCollisionWithPlatform(this, player);
+            CollisionManager.OnPlayerCollisionWithPlatform(this, player, collision);
         }
     }
 }

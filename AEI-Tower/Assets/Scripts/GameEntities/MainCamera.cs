@@ -12,7 +12,7 @@ public class MainCamera : MonoBehaviour
     {
         if (Camera.current != null && EnableMovement)
         {
-            Camera.current.transform.Translate(new Vector3(0f, CameraSpeed, 0f));
+            Camera.current.transform.Translate(new Vector3(0f, CameraSpeed * Time.deltaTime, 0f));
         }
     }
 
@@ -22,5 +22,6 @@ public class MainCamera : MonoBehaviour
             return;
 
         Camera.main.transform.position = InitialPosition;
+        CameraSpeed = 1;
     }
 }
