@@ -11,8 +11,12 @@ public class EntitiesManager : MonoBehaviour
     public SpriteRenderer Background;
     public GameManager GameManager;
     public ICollection<GameObject> Platforms = new List<GameObject>();
+    public ICollection<GameObject> Coins = new List<GameObject>();
 
     public GameObject PlatformPrefab;
+    public GameObject CoinPrefab;
+
+    public float MatrialsChance = 0.25f;
 
     Vector3 _lastPosition = new Vector3();
     Rect _platformSpawningBounds = new Rect(-20, -5, 40, 5);
@@ -33,6 +37,12 @@ public class EntitiesManager : MonoBehaviour
         Platforms.Remove(platform);
     }
 
+    public void RemoveCoin(GameObject coin)
+    {
+        Destroy(coin);
+        Coins.Remove(coin);
+    }
+
     public void SpawnPlatform()
     {
         _lastPosition.x = Random.Range(
@@ -49,5 +59,16 @@ public class EntitiesManager : MonoBehaviour
 
         _platformSpawningBounds.yMin = _lastPosition.y + 4;
         _platformSpawningBounds.yMax = _lastPosition.y + 9;
+
+        if (Random.value < MatrialsChance)
+        {
+            var position = new Vector3(_lastPosition.x + 0.5f, _lastPosition.y + 2);
+
+            gameObject = Instantiate(CoinPrefab, position, Quaternion.identity);
+
+            gameObject.GetComponent<Coin>().CollisionManager = GameManager.CollisionManager;
+
+            Coins.Add(gameObject);
+        }
     }
 }

@@ -24,5 +24,11 @@ public class Destroyer : MonoBehaviour
 
             CollisionManager.OnPlatformCollisionWithDestroyer(this, platform);
         }
+        else if (collision.gameObject.GetComponent<Coin>() != null)
+        {
+            var coin = collision.gameObject.GetComponent<Coin>();
+
+            CollisionManager.OnCoinCollisionWithDestroyer(this, coin);
+        }
     }
 }

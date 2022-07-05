@@ -3854,6 +3854,8 @@ MonoBehaviour:
   Background: {fileID: 269849689}
   GameManager: {fileID: 351798810}
   PlatformPrefab: {fileID: 6466797983740458188, guid: b0b2224ad3e09d2449fa503d3113169e, type: 3}
+  CoinPrefab: {fileID: 9115455777999384472, guid: ed348ce5ae0658144a0c3d5791d8d595, type: 3}
+  MatrialsChance: 0.25
 --- !u!1 &1943646977
 GameObject:
   m_ObjectHideFlags: 0
