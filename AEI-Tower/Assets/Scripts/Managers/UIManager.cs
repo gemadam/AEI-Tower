@@ -29,6 +29,22 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void Reset()
+    {
+        if (GameBackgrounds.Count == 0)
+        {
+            Debug.LogError("No backgrounds were loaded... LOL");
+            return;
+        }
+
+        _backgroundsQueue.Clear();
+
+        foreach (var sprite in GameBackgrounds)
+            _backgroundsQueue.Enqueue(sprite);
+
+        GameManager.EntitiesManager.Background.sprite = _backgroundsQueue.Dequeue();
+    }
+
     public void LevelUp()
     {
         if (GameBackgrounds.Count == 0)

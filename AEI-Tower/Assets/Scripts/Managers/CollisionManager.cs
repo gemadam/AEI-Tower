@@ -13,7 +13,7 @@ public class CollisionManager : MonoBehaviour
         if (collision.relativeVelocity.y <= 0f && platform.PointsForPlatform != 0)
         {
             ScoreManager.AddPoints(platform.PointsForPlatform);
-            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min(Math.Max(ScoreManager.Points / 20, 1) * 3, 15);
+            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min((ScoreManager.Points / 20) + 3, 5);
 
             platform.PointsForPlatform = 0;
         }
@@ -42,6 +42,13 @@ public class CollisionManager : MonoBehaviour
         GameManager.EntitiesManager.RemoveCoin(coin.gameObject);
     }
 
+    public void OnPlayerCollisionWithChest(Chest chest, Player player)
+    {
+        Debug.Log("Player collided with coin.");
+
+        chest.Open();
+    }
+
     public void OnPlatformCollisionWithDestroyer(Destroyer destroyer, Platform platform)
     {
         Debug.Log("Platform collided with destroyer.");
@@ -49,7 +56,6 @@ public class CollisionManager : MonoBehaviour
         if (platform.CanBeDestroyed)
         {
             ScoreManager.AddPoints(platform.PointsForPlatform);
-            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min(Math.Max(ScoreManager.Points / 10, 1) * 3, 20);
 
             GameManager.EntitiesManager.SpawnPlatform();
 
@@ -62,5 +68,12 @@ public class CollisionManager : MonoBehaviour
         Debug.Log("Coin collided with destroyer.");
 
         GameManager.EntitiesManager.RemoveCoin(coin.gameObject);
+    }
+
+    public void OnChestCollisionWithDestroyer(Destroyer destroyer, Chest chest)
+    {
+        Debug.Log("Chest collided with destroyer.");
+
+        GameManager.EntitiesManager.RemoveChest(chest.gameObject);
     }
 }

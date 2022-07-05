@@ -41,6 +41,13 @@ Project mostly utilize the knowledge from laboratories about collision detection
 ![Workflow of the project](/Docs/Img/ProjectWorkflow.png)
 
 
+## Laboratory topics
+
+- [ANI] Computer animation
+- [COL] Collision detection
+- [SKE] Bone animation
+- [UNT] Introduction to Unity
+
 
 ## Useful links
 

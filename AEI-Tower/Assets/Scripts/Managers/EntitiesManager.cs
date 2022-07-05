@@ -12,11 +12,14 @@ public class EntitiesManager : MonoBehaviour
     public GameManager GameManager;
     public ICollection<GameObject> Platforms = new List<GameObject>();
     public ICollection<GameObject> Coins = new List<GameObject>();
+    public ICollection<GameObject> Chests = new List<GameObject>();
 
     public GameObject PlatformPrefab;
     public GameObject CoinPrefab;
+    public GameObject ChestPrefab;
 
     public float MatrialsChance = 0.25f;
+    public float ChestChance = 0.10f;
 
     Vector3 _lastPosition = new Vector3();
     Rect _platformSpawningBounds = new Rect(-20, -5, 40, 5);
@@ -41,6 +44,12 @@ public class EntitiesManager : MonoBehaviour
     {
         Destroy(coin);
         Coins.Remove(coin);
+    }
+
+    public void RemoveChest(GameObject chest)
+    {
+        Destroy(chest);
+        Chests.Remove(chest);
     }
 
     public void SpawnPlatform()
@@ -69,6 +78,16 @@ public class EntitiesManager : MonoBehaviour
             gameObject.GetComponent<Coin>().CollisionManager = GameManager.CollisionManager;
 
             Coins.Add(gameObject);
+        }
+        else if (Random.value < ChestChance)
+        {
+            var position = new Vector3(_lastPosition.x + 0.5f, _lastPosition.y + 2);
+
+            gameObject = Instantiate(ChestPrefab, position, Quaternion.identity);
+
+            gameObject.GetComponent<Chest>().GameManager = GameManager;
+
+            Chests.Add(gameObject);
         }
     }
 }

@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
         EntitiesManager.Reset();
         ScoreManager.Reset();
+        UIManager.Reset();
     }
 
     public void OnMainMenu()
