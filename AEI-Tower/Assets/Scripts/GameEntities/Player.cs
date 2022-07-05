@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     {
         if (CanBeControlled)
             MovementLogic();
+        else
+            _rigidBody.velocity = new Vector2(0, 0);
     }
 
     private void FixedUpdate()
@@ -58,7 +60,12 @@ public class Player : MonoBehaviour
             _movement.x = 0;
     }
 
-    public void ResetState()
+    public void RunForrestRun()
+    {
+        _rigidBody.velocity = new Vector2(0, Speed.y);
+    }
+
+    public void Reset()
     {
         if (_rigidBody == null)
             return;

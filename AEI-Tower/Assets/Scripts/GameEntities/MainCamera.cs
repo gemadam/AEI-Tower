@@ -16,7 +16,7 @@ public class MainCamera : MonoBehaviour
         }
     }
 
-    public void ResetState()
+    public void Reset()
     {
         CameraSpeed = 1;
 

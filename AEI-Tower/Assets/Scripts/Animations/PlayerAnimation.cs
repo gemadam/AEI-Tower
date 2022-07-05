@@ -90,12 +90,6 @@ public class PlayerAnimation : MonoBehaviour
 
     void IdleAnimation()
     {
-        /*
-            bone_5 -> rotate 313.7847
-            bone_6 -> rotate 43.4138 - 355.4182
-         
-         */
-
         if (_frame < 120)
         {
             _leftArm.transform.Rotate(0, 0, -0.2f);
@@ -116,12 +110,6 @@ public class PlayerAnimation : MonoBehaviour
 
     void JumpAnimation()
     {
-        /*
-            bone_5 -> rotate 313.7847
-            bone_6 -> rotate 43.4138 - 355.4182
-         
-         */
-
         var legStep = 0.5f;
         var armStep = 1f;
         var handStep = 0.1f;

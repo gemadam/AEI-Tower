@@ -13,7 +13,7 @@ public class CollisionManager : MonoBehaviour
         if (collision.relativeVelocity.y <= 0f && platform.PointsForPlatform != 0)
         {
             ScoreManager.AddPoints(platform.PointsForPlatform);
-            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min(Math.Max(ScoreManager.Points / 10, 1) * 3, 20);
+            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min(Math.Max(ScoreManager.Points / 10, 1) * 3, 15);
 
             GameManager.EntitiesManager.SpawnPlatform();
 
@@ -25,7 +25,15 @@ public class CollisionManager : MonoBehaviour
     public void OnPlayerCollisionWithDestroyer(Destroyer destroyer, Player player)
     {
         Debug.Log("Player collided with destroyer.");
-        GameManager.OnGameOver();
+
+        if (ScoreManager.Materials > 0)
+        {
+            ScoreManager.AddMaterials(-1);
+            player.RunForrestRun();
+            GameManager.UIManager.DisplayMessage("You've been saved by your older mates.");
+        }
+        else
+            GameManager.OnGameOver();
     }
 
     public void OnPlatformCollisionWithDestroyer(Destroyer destroyer, Platform platform)

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 
     public EntitiesManager EntitiesManager;
     public CollisionManager CollisionManager;
+    public ScoreManager ScoreManager;
 
     // Start is called before the first frame update
     void Start()
@@ -14,31 +15,36 @@ public class GameManager : MonoBehaviour
         OnMainMenu();
     }
 
+    void Reset()
+    {
+        EntitiesManager.Player.Reset();
+        EntitiesManager.Camera.Reset();
+
+        EntitiesManager.Reset();
+        ScoreManager.Reset();
+    }
+
     public void OnMainMenu()
     {
-        EntitiesManager.Player.ResetState();
-        EntitiesManager.Camera.ResetState();
-
+        Reset();
         EntitiesManager.Player.CanBeControlled = false;
         EntitiesManager.Camera.EnableMovement = false;
+        EntitiesManager.Destroyer.EnableDestroyer = false;
 
         UIManager.SetView(EnumUIView.MainMenu);
     }
 
     public void OnNewGame()
     {
+        Reset();
         UIManager.SetView(EnumUIView.Game);
-
-        EntitiesManager.ResetState();
 
         foreach (var i in Enumerable.Range(0, 5))
             EntitiesManager.SpawnPlatform();
 
-        EntitiesManager.Player.ResetState();
-        EntitiesManager.Camera.ResetState();
-
         EntitiesManager.Player.CanBeControlled = true;
         EntitiesManager.Camera.EnableMovement = true;
+        EntitiesManager.Destroyer.EnableDestroyer = true;
     }
 
     public void OnWin()
@@ -47,6 +53,7 @@ public class GameManager : MonoBehaviour
 
         EntitiesManager.Player.CanBeControlled = false;
         EntitiesManager.Camera.EnableMovement = false;
+        EntitiesManager.Destroyer.EnableDestroyer = false;
     }
 
     public void OnGameOver()
@@ -55,5 +62,6 @@ public class GameManager : MonoBehaviour
 
         EntitiesManager.Player.CanBeControlled = false;
         EntitiesManager.Camera.EnableMovement = false;
+        EntitiesManager.Destroyer.EnableDestroyer = false;
     }
 }

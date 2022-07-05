@@ -7,6 +7,7 @@ namespace Assets.Scripts.UI
     public class GameUI : MonoBehaviour
     {
         public TMP_Text EctsPointsLabel;
+        public TMP_Text MaterialsLabel;
         public TMP_Text MessagesLabel;
 
         public float MessageLifeTimeSeconds = 3;
@@ -34,6 +35,11 @@ namespace Assets.Scripts.UI
         public void DisplayPoints(int points)
         {
             EctsPointsLabel.SetText(points.ToString());
+        }
+
+        public void DisplayMaterials(int materials)
+        {
+            MaterialsLabel.SetText(materials.ToString());
         }
 
         public void DisplayMessage(string message)

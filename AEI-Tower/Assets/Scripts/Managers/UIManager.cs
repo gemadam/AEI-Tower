@@ -1,3 +1,4 @@
+using Assets.Scripts.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -56,5 +57,10 @@ public class UIManager : MonoBehaviour
         {
             GameManager.EntitiesManager.Background.sprite = WinBackground;
         }
+    }
+
+    public void DisplayMessage(string message)
+    {
+        GameUI.GetComponent<GameUI>().DisplayMessage(message);
     }
 }
