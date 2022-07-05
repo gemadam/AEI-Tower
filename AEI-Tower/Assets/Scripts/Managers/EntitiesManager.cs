@@ -7,6 +7,7 @@ public class EntitiesManager : MonoBehaviour
 {
     public Player Player;
     public MainCamera Camera;
+    public SpriteRenderer Background;
     public GameManager GameManager;
     public ICollection<GameObject> Platforms = new List<GameObject>();
 
@@ -14,7 +15,6 @@ public class EntitiesManager : MonoBehaviour
 
     Vector3 _lastPosition = new Vector3();
     Rect _platformSpawningBounds = new Rect(-20, -5, 40, 5);
-
 
     public void ResetState()
     {

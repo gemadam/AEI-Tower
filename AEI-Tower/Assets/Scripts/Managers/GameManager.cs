@@ -41,6 +41,14 @@ public class GameManager : MonoBehaviour
         EntitiesManager.Camera.EnableMovement = true;
     }
 
+    public void OnWin()
+    {
+        UIManager.SetView(EnumUIView.Win);
+
+        EntitiesManager.Player.CanBeControlled = false;
+        EntitiesManager.Camera.EnableMovement = false;
+    }
+
     public void OnGameOver()
     {
         UIManager.SetView(EnumUIView.GameOver);

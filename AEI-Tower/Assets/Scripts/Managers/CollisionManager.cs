@@ -33,6 +33,13 @@ public class CollisionManager : MonoBehaviour
         Debug.Log("Platform collided with destroyer.");
 
         if (platform.CanBeDestroyed)
+        {
+            ScoreManager.AddPoints(platform.PointsForPlatform);
+            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min(Math.Max(ScoreManager.Points / 10, 1) * 3, 20);
+
+            GameManager.EntitiesManager.SpawnPlatform();
+
             GameManager.EntitiesManager.RemovePlatform(platform.gameObject);
+        }
     }
 }

@@ -18,10 +18,11 @@ public class MainCamera : MonoBehaviour
 
     public void ResetState()
     {
+        CameraSpeed = 1;
+
         if (Camera.main == null)
             return;
 
         Camera.main.transform.position = InitialPosition;
-        CameraSpeed = 1;
     }
 }

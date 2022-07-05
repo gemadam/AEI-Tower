@@ -6,6 +6,8 @@ public class Destroyer : MonoBehaviour
 
     public bool EnableDestroyer = true;
 
+    public int _step = 0;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!EnableDestroyer)
