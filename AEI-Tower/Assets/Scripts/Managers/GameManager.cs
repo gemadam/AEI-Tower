@@ -1,20 +1,24 @@
 using System.Linq;
 using UnityEngine;
 
+/**
+ Game manager class
+ */
 public class GameManager : MonoBehaviour
 {
-    public UIManager UIManager;
+    public UIManager UIManager;                                         /*!< Reference to UI manager */
+    public EntitiesManager EntitiesManager;                             /*!< Reference to entities manager */
+    public CollisionManager CollisionManager;                           /*!< Reference to collision manager */
+    public ScoreManager ScoreManager;                                   /*!< Reference to score manager */
 
-    public EntitiesManager EntitiesManager;
-    public CollisionManager CollisionManager;
-    public ScoreManager ScoreManager;
-
-    // Start is called before the first frame update
     void Start()
     {
         OnMainMenu();
     }
 
+    /**
+     Reset game state
+     */
     void Reset()
     {
         EntitiesManager.Player.Reset();
@@ -25,6 +29,9 @@ public class GameManager : MonoBehaviour
         UIManager.Reset();
     }
 
+    /**
+     Open main menu
+     */
     public void OnMainMenu()
     {
         Reset();
@@ -35,6 +42,9 @@ public class GameManager : MonoBehaviour
         UIManager.SetView(EnumUIView.MainMenu);
     }
 
+    /**
+     Start new game
+     */
     public void OnNewGame()
     {
         Reset();
@@ -48,6 +58,9 @@ public class GameManager : MonoBehaviour
         EntitiesManager.Destroyer.EnableDestroyer = true;
     }
 
+    /**
+     Player victory logic
+     */
     public void OnWin()
     {
         UIManager.SetView(EnumUIView.Win);
@@ -57,6 +70,9 @@ public class GameManager : MonoBehaviour
         EntitiesManager.Destroyer.EnableDestroyer = false;
     }
 
+    /**
+     Player lose logic
+     */
     public void OnGameOver()
     {
         UIManager.SetView(EnumUIView.GameOver);

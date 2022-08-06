@@ -1,0 +1,172 @@
+\hypertarget{class_entities_manager}{}\doxysection{Entities\+Manager Class Reference}
+\label{class_entities_manager}\index{EntitiesManager@{EntitiesManager}}
+Inheritance diagram for Entities\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_entities_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_entities_manager_a9520a17b8d9b29fafe82db6014619129}{Reset}} ()
+\item 
+void \mbox{\hyperlink{class_entities_manager_a36ad78e5e2a3177af3fc77c8fe47e7e4}{Remove\+Platform}} (Game\+Object platform)
+\item 
+void \mbox{\hyperlink{class_entities_manager_a59f996e404e32bd553645ecc08c00646}{Remove\+Coin}} (Game\+Object coin)
+\item 
+void \mbox{\hyperlink{class_entities_manager_a5dd903bef5adba641e24421c6b04776e}{Remove\+Chest}} (Game\+Object chest)
+\item 
+void \mbox{\hyperlink{class_entities_manager_ae79952629a66faaf317e352161fb60c2}{Spawn\+Platform}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player}{Player}} \mbox{\hyperlink{class_entities_manager_aaa734fe0cd9483c7f4f603d2ef83be85}{Player}}
+\item 
+\mbox{\hyperlink{class_main_camera}{Main\+Camera}} \mbox{\hyperlink{class_entities_manager_a1df0b128e9c70f86d80aea74a18becbb}{Camera}}
+\item 
+\mbox{\hyperlink{class_destroyer}{Destroyer}} \mbox{\hyperlink{class_entities_manager_a53bbf9eeeebbbe877ba9a07d8931ee9c}{Destroyer}}
+\item 
+Sprite\+Renderer \mbox{\hyperlink{class_entities_manager_a3314b5717e245c239f3f683b26798214}{Background}}
+\item 
+\mbox{\hyperlink{class_game_manager}{Game\+Manager}} \mbox{\hyperlink{class_entities_manager_a4fe9ed37892348bdeef3970377999eab}{Game\+Manager}}
+\item 
+ICollection$<$ Game\+Object $>$ \mbox{\hyperlink{class_entities_manager_a14851e1dcf734231c0d9b7dcab7e6a3e}{Platforms}} = new List$<$Game\+Object$>$()
+\item 
+ICollection$<$ Game\+Object $>$ \mbox{\hyperlink{class_entities_manager_a8b04c97471ca8da328b106a5241d2b3d}{Coins}} = new List$<$Game\+Object$>$()
+\item 
+ICollection$<$ Game\+Object $>$ \mbox{\hyperlink{class_entities_manager_acd883ddb605de80ef10e45b6444f7fd6}{Chests}} = new List$<$Game\+Object$>$()
+\item 
+Game\+Object \mbox{\hyperlink{class_entities_manager_a4c9595633029448b6ce7150ee8a9b57e}{Platform\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_entities_manager_a1e4b448ad3aaaed34250f690866c2645}{Coin\+Prefab}}
+\item 
+Game\+Object \mbox{\hyperlink{class_entities_manager_ac99ce13a5e77ec980c3d948858b57534}{Chest\+Prefab}}
+\item 
+float \mbox{\hyperlink{class_entities_manager_a8286be69a5ee5195a7467e0b7c9be4a2}{Matrials\+Chance}} = 0.\+25f
+\item 
+float \mbox{\hyperlink{class_entities_manager_a87cbeaccc99315305d06d69e7a42ae13}{Chest\+Chance}} = 0.\+10f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entities manager class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entities_manager_a5dd903bef5adba641e24421c6b04776e}\label{class_entities_manager_a5dd903bef5adba641e24421c6b04776e}} 
+\index{EntitiesManager@{EntitiesManager}!RemoveChest@{RemoveChest}}
+\index{RemoveChest@{RemoveChest}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{RemoveChest()}{RemoveChest()}}
+{\footnotesize\ttfamily void Entities\+Manager.\+Remove\+Chest (\begin{DoxyParamCaption}\item[{Game\+Object}]{chest }\end{DoxyParamCaption})}
+
+Remove chest \mbox{\Hypertarget{class_entities_manager_a59f996e404e32bd553645ecc08c00646}\label{class_entities_manager_a59f996e404e32bd553645ecc08c00646}} 
+\index{EntitiesManager@{EntitiesManager}!RemoveCoin@{RemoveCoin}}
+\index{RemoveCoin@{RemoveCoin}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{RemoveCoin()}{RemoveCoin()}}
+{\footnotesize\ttfamily void Entities\+Manager.\+Remove\+Coin (\begin{DoxyParamCaption}\item[{Game\+Object}]{coin }\end{DoxyParamCaption})}
+
+Remove coin \mbox{\Hypertarget{class_entities_manager_a36ad78e5e2a3177af3fc77c8fe47e7e4}\label{class_entities_manager_a36ad78e5e2a3177af3fc77c8fe47e7e4}} 
+\index{EntitiesManager@{EntitiesManager}!RemovePlatform@{RemovePlatform}}
+\index{RemovePlatform@{RemovePlatform}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{RemovePlatform()}{RemovePlatform()}}
+{\footnotesize\ttfamily void Entities\+Manager.\+Remove\+Platform (\begin{DoxyParamCaption}\item[{Game\+Object}]{platform }\end{DoxyParamCaption})}
+
+Remove platform \mbox{\Hypertarget{class_entities_manager_a9520a17b8d9b29fafe82db6014619129}\label{class_entities_manager_a9520a17b8d9b29fafe82db6014619129}} 
+\index{EntitiesManager@{EntitiesManager}!Reset@{Reset}}
+\index{Reset@{Reset}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Entities\+Manager.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reset game state \mbox{\Hypertarget{class_entities_manager_ae79952629a66faaf317e352161fb60c2}\label{class_entities_manager_ae79952629a66faaf317e352161fb60c2}} 
+\index{EntitiesManager@{EntitiesManager}!SpawnPlatform@{SpawnPlatform}}
+\index{SpawnPlatform@{SpawnPlatform}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{SpawnPlatform()}{SpawnPlatform()}}
+{\footnotesize\ttfamily void Entities\+Manager.\+Spawn\+Platform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Spawn platform 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_entities_manager_a3314b5717e245c239f3f683b26798214}\label{class_entities_manager_a3314b5717e245c239f3f683b26798214}} 
+\index{EntitiesManager@{EntitiesManager}!Background@{Background}}
+\index{Background@{Background}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Background}{Background}}
+{\footnotesize\ttfamily Sprite\+Renderer Entities\+Manager.\+Background}
+
+Reference to backgorund \mbox{\Hypertarget{class_entities_manager_a1df0b128e9c70f86d80aea74a18becbb}\label{class_entities_manager_a1df0b128e9c70f86d80aea74a18becbb}} 
+\index{EntitiesManager@{EntitiesManager}!Camera@{Camera}}
+\index{Camera@{Camera}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Camera}{Camera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_main_camera}{Main\+Camera}} Entities\+Manager.\+Camera}
+
+Reference to camera \mbox{\Hypertarget{class_entities_manager_a87cbeaccc99315305d06d69e7a42ae13}\label{class_entities_manager_a87cbeaccc99315305d06d69e7a42ae13}} 
+\index{EntitiesManager@{EntitiesManager}!ChestChance@{ChestChance}}
+\index{ChestChance@{ChestChance}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{ChestChance}{ChestChance}}
+{\footnotesize\ttfamily float Entities\+Manager.\+Chest\+Chance = 0.\+10f}
+
+Chance of spawning chest. Effective range 0-\/1 \mbox{\Hypertarget{class_entities_manager_ac99ce13a5e77ec980c3d948858b57534}\label{class_entities_manager_ac99ce13a5e77ec980c3d948858b57534}} 
+\index{EntitiesManager@{EntitiesManager}!ChestPrefab@{ChestPrefab}}
+\index{ChestPrefab@{ChestPrefab}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{ChestPrefab}{ChestPrefab}}
+{\footnotesize\ttfamily Game\+Object Entities\+Manager.\+Chest\+Prefab}
+
+Reference to chest prefab \mbox{\Hypertarget{class_entities_manager_acd883ddb605de80ef10e45b6444f7fd6}\label{class_entities_manager_acd883ddb605de80ef10e45b6444f7fd6}} 
+\index{EntitiesManager@{EntitiesManager}!Chests@{Chests}}
+\index{Chests@{Chests}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Chests}{Chests}}
+{\footnotesize\ttfamily ICollection$<$Game\+Object$>$ Entities\+Manager.\+Chests = new List$<$Game\+Object$>$()}
+
+Collection of generated chests \mbox{\Hypertarget{class_entities_manager_a1e4b448ad3aaaed34250f690866c2645}\label{class_entities_manager_a1e4b448ad3aaaed34250f690866c2645}} 
+\index{EntitiesManager@{EntitiesManager}!CoinPrefab@{CoinPrefab}}
+\index{CoinPrefab@{CoinPrefab}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{CoinPrefab}{CoinPrefab}}
+{\footnotesize\ttfamily Game\+Object Entities\+Manager.\+Coin\+Prefab}
+
+Reference to coin prefab \mbox{\Hypertarget{class_entities_manager_a8b04c97471ca8da328b106a5241d2b3d}\label{class_entities_manager_a8b04c97471ca8da328b106a5241d2b3d}} 
+\index{EntitiesManager@{EntitiesManager}!Coins@{Coins}}
+\index{Coins@{Coins}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Coins}{Coins}}
+{\footnotesize\ttfamily ICollection$<$Game\+Object$>$ Entities\+Manager.\+Coins = new List$<$Game\+Object$>$()}
+
+Collection of generated coins \mbox{\Hypertarget{class_entities_manager_a53bbf9eeeebbbe877ba9a07d8931ee9c}\label{class_entities_manager_a53bbf9eeeebbbe877ba9a07d8931ee9c}} 
+\index{EntitiesManager@{EntitiesManager}!Destroyer@{Destroyer}}
+\index{Destroyer@{Destroyer}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Destroyer}{Destroyer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_destroyer}{Destroyer}} Entities\+Manager.\+Destroyer}
+
+Reference to destroyer \mbox{\Hypertarget{class_entities_manager_a4fe9ed37892348bdeef3970377999eab}\label{class_entities_manager_a4fe9ed37892348bdeef3970377999eab}} 
+\index{EntitiesManager@{EntitiesManager}!GameManager@{GameManager}}
+\index{GameManager@{GameManager}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{GameManager}{GameManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_manager}{Game\+Manager}} Entities\+Manager.\+Game\+Manager}
+
+Reference to game manager \mbox{\Hypertarget{class_entities_manager_a8286be69a5ee5195a7467e0b7c9be4a2}\label{class_entities_manager_a8286be69a5ee5195a7467e0b7c9be4a2}} 
+\index{EntitiesManager@{EntitiesManager}!MatrialsChance@{MatrialsChance}}
+\index{MatrialsChance@{MatrialsChance}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{MatrialsChance}{MatrialsChance}}
+{\footnotesize\ttfamily float Entities\+Manager.\+Matrials\+Chance = 0.\+25f}
+
+Chance of spawning materials. Effective range 0-\/1 \mbox{\Hypertarget{class_entities_manager_a4c9595633029448b6ce7150ee8a9b57e}\label{class_entities_manager_a4c9595633029448b6ce7150ee8a9b57e}} 
+\index{EntitiesManager@{EntitiesManager}!PlatformPrefab@{PlatformPrefab}}
+\index{PlatformPrefab@{PlatformPrefab}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{PlatformPrefab}{PlatformPrefab}}
+{\footnotesize\ttfamily Game\+Object Entities\+Manager.\+Platform\+Prefab}
+
+Reference to player prefab \mbox{\Hypertarget{class_entities_manager_a14851e1dcf734231c0d9b7dcab7e6a3e}\label{class_entities_manager_a14851e1dcf734231c0d9b7dcab7e6a3e}} 
+\index{EntitiesManager@{EntitiesManager}!Platforms@{Platforms}}
+\index{Platforms@{Platforms}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Platforms}{Platforms}}
+{\footnotesize\ttfamily ICollection$<$Game\+Object$>$ Entities\+Manager.\+Platforms = new List$<$Game\+Object$>$()}
+
+Collection of generated platforms \mbox{\Hypertarget{class_entities_manager_aaa734fe0cd9483c7f4f603d2ef83be85}\label{class_entities_manager_aaa734fe0cd9483c7f4f603d2ef83be85}} 
+\index{EntitiesManager@{EntitiesManager}!Player@{Player}}
+\index{Player@{Player}!EntitiesManager@{EntitiesManager}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}} Entities\+Manager.\+Player}
+
+Reference to player 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/\+Polsl/\+AEI-\/\+Tower/\+AEI-\/\+Tower/\+Assets/\+Scripts/\+Managers/\mbox{\hyperlink{_entities_manager_8cs}{Entities\+Manager.\+cs}}\end{DoxyCompactItemize}

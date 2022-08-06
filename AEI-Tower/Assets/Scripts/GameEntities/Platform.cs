@@ -1,11 +1,14 @@
 using UnityEngine;
 
+/**
+    Platform class
+ */
 public class Platform : MonoBehaviour
 {
-    public CollisionManager CollisionManager;
+    public CollisionManager CollisionManager;   /*!< Reference to collision manager */
 
-    public bool CanBeDestroyed = true;
-    public int PointsForPlatform = 1;
+    public bool CanBeDestroyed = true;          /*!< Can platform be destroyed */
+    public int PointsForPlatform = 1;           /*!< Points assigned to platform */
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -1,16 +1,19 @@
-using Assets.Scripts.UI;
 using UnityEngine;
 
+
+/**
+ Score manager class
+ */
 public class ScoreManager : MonoBehaviour
 {
-    public GameUI GameUI;
-    public GameManager GameManager;
-    public int WinScore = 20;
-    private int _materials = 1;
-    private int _points = 0;
+    public GameUI GameUI;                               /*!< Reference to UI */
+    public GameManager GameManager;                     /*!< Reference to game manager */
+    public int WinScore = 20;                           /*!< Points required to win the game */
+    private int _materials = 1;                         /*!< Numer of player materials */
+    private int _points = 0;                            /*!< Numer of player points */
 
-    public int Points { get => _points; }
-    public int Materials { get => _materials; }
+    public int Points { get => _points; }               /*!< Getter of player points */
+    public int Materials { get => _materials; }         /*!< Getter of player materials */
 
     void Update()
     {
@@ -18,6 +21,9 @@ public class ScoreManager : MonoBehaviour
         GameUI.DisplayMaterials(_materials);
     }
 
+    /**
+     Incresase player score
+     */
     public void AddPoints(int points)
     {
         _points += points;
@@ -30,11 +36,17 @@ public class ScoreManager : MonoBehaviour
             GameManager.UIManager.LevelUp();
     }
 
+    /**
+     Increase player materials
+     */
     public void AddMaterials(int materials)
     {
         _materials += materials;
     }
 
+    /**
+     Reset state
+     */
     public void Reset()
     {
         _points = 0;

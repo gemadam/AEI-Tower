@@ -1,32 +1,40 @@
 using System;
 using UnityEngine;
 
+/**
+    Collision manager class
+ */
 public class CollisionManager : MonoBehaviour
 {
-    public GameManager GameManager;
-    public ScoreManager ScoreManager;
+    public GameManager GameManager;                                 /*!< Reference to game manager */
 
+    /**
+        Player collision with platform logic
+     */
     public void OnPlayerCollisionWithPlatform(Platform platform, Player player, Collision2D collision)
     {
         Debug.Log("Player collided with platform.");
 
         if (collision.relativeVelocity.y <= 0f && platform.PointsForPlatform != 0)
         {
-            ScoreManager.AddPoints(platform.PointsForPlatform);
-            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min((ScoreManager.Points / 20) + 3, 5);
+            GameManager.ScoreManager.AddPoints(platform.PointsForPlatform);
+            GameManager.EntitiesManager.Camera.CameraSpeed = Math.Min((GameManager.ScoreManager.Points / 20) + 3, 5);
 
             platform.PointsForPlatform = 0;
         }
 
     }
 
+    /**
+        Player collision with destroyer logic
+     */
     public void OnPlayerCollisionWithDestroyer(Destroyer destroyer, Player player)
     {
         Debug.Log("Player collided with destroyer.");
 
-        if (ScoreManager.Materials > 0)
+        if (GameManager.ScoreManager.Materials > 0)
         {
-            ScoreManager.AddMaterials(-1);
+            GameManager.ScoreManager.AddMaterials(-1);
             player.RunForrestRun();
             GameManager.UIManager.DisplayMessage("You've been saved by your older mates.");
         }
@@ -34,14 +42,20 @@ public class CollisionManager : MonoBehaviour
             GameManager.OnGameOver();
     }
 
+    /**
+        Player collision with coin logic
+     */
     public void OnPlayerCollisionWithCoin(Coin coin, Player player)
     {
         Debug.Log("Player collided with coin.");
 
-        ScoreManager.AddMaterials(1);
+        GameManager.ScoreManager.AddMaterials(1);
         GameManager.EntitiesManager.RemoveCoin(coin.gameObject);
     }
 
+    /**
+        Player collision with chest logic
+     */
     public void OnPlayerCollisionWithChest(Chest chest, Player player)
     {
         Debug.Log("Player collided with coin.");
@@ -49,13 +63,16 @@ public class CollisionManager : MonoBehaviour
         chest.Open();
     }
 
+    /**
+        Platform collision with destroyer logic
+     */
     public void OnPlatformCollisionWithDestroyer(Destroyer destroyer, Platform platform)
     {
         Debug.Log("Platform collided with destroyer.");
 
         if (platform.CanBeDestroyed)
         {
-            ScoreManager.AddPoints(platform.PointsForPlatform);
+            GameManager.ScoreManager.AddPoints(platform.PointsForPlatform);
 
             GameManager.EntitiesManager.SpawnPlatform();
 
@@ -63,6 +80,9 @@ public class CollisionManager : MonoBehaviour
         }
     }
 
+    /**
+        Coin collision with destroyer logic
+     */
     public void OnCoinCollisionWithDestroyer(Destroyer destroyer, Coin coin)
     {
         Debug.Log("Coin collided with destroyer.");
@@ -70,6 +90,9 @@ public class CollisionManager : MonoBehaviour
         GameManager.EntitiesManager.RemoveCoin(coin.gameObject);
     }
 
+    /**
+        Chest collision with destroyer logic
+     */
     public void OnChestCollisionWithDestroyer(Destroyer destroyer, Chest chest)
     {
         Debug.Log("Chest collided with destroyer.");

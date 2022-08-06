@@ -1,10 +1,13 @@
 using UnityEngine;
 
+/**
+    Destroyer class
+ */
 public class Destroyer : MonoBehaviour
 {
-    public CollisionManager CollisionManager;
+    public CollisionManager CollisionManager;   /*!< Reference to collision manager */
 
-    public bool EnableDestroyer = true;
+    public bool EnableDestroyer = true;         /*!< Enables destroyer interactions */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1,11 +1,17 @@
 using UnityEngine;
 
+/**
+    Chest class
+ */
 public class Chest : MonoBehaviour
 {
-    public bool IsOpen = false;
-    public Sprite ChestOpenSprite;
-    public GameManager GameManager;
+    public bool IsOpen = false;         /*!< Is chest opened */
+    public Sprite ChestOpenSprite;      /*!< Sprite of opened chest */
+    public GameManager GameManager;     /*!< Game manager reference */
 
+    /**
+        Opens chest.
+     */
     public void Open()
     {
         if (IsOpen)
@@ -24,14 +30,14 @@ public class Chest : MonoBehaviour
         }
         else if (r < 0.5f)
         {
-            GameManager.UIManager.DisplayMessage("Professor has changed questions on the second term... So unlucky :'(");
+            GameManager.UIManager.DisplayMessage("Professor has changed questions on the second term of exam,,,... So unlucky :'(");
 
             if (GameManager.ScoreManager.Materials > 0)
                 GameManager.ScoreManager.AddMaterials(-1);
         }
         else if (r < 0.75f)
         {
-            GameManager.UIManager.DisplayMessage("Professor had a good day... Everyone present get 3 :D");
+            GameManager.UIManager.DisplayMessage("Professor had a good day... Everyone present on exam got 3 :D");
 
             GameManager.ScoreManager.AddPoints(5);
         }

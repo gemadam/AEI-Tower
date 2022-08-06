@@ -9,22 +9,22 @@ public enum EnumPlayerAnimation
 
 public class PlayerAnimation : MonoBehaviour
 {
-    private GameObject _leftLeg;
-    private Quaternion _leftLegQuaternion;
-    private GameObject _rightLeg;
-    private Quaternion _rightLegQuaternion;
-    private GameObject _leftArm;
-    private Quaternion _leftArmQuaternion;
-    private GameObject _leftHand;
-    private Quaternion _leftHandQuaternion;
-    private GameObject _rightArm;
-    private Quaternion _rightArmQuaternion;
-    private GameObject _rightHand;
-    private Quaternion _rightHandQuaternion;
+    private GameObject _leftLeg;                                                /*!< Players left leg */
+    private Quaternion _leftLegQuaternion;                                      /*!< Players left leg start position */
+    private GameObject _rightLeg;                                               /*!< Players right leg */
+    private Quaternion _rightLegQuaternion;                                     /*!< Players right leg start position */
+    private GameObject _leftArm;                                                /*!< Players left arm */
+    private Quaternion _leftArmQuaternion;                                      /*!< Players left arm start position */
+    private GameObject _leftHand;                                               /*!< Players left hand */
+    private Quaternion _leftHandQuaternion;                                     /*!< Players left hand start position */
+    private GameObject _rightArm;                                               /*!< Players right arm */
+    private Quaternion _rightArmQuaternion;                                     /*!< Players right arm start position */
+    private GameObject _rightHand;                                              /*!< Players right hand */
+    private Quaternion _rightHandQuaternion;                                    /*!< Players right hand start position */
 
-    private EnumPlayerAnimation _animationState = EnumPlayerAnimation.Idle;
+    private EnumPlayerAnimation _animationState = EnumPlayerAnimation.Idle;     /*!< Current player animation */
 
-    private int _frame = 0;
+    private int _frame = 0;                                                     /*!< Current animation frame */
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +46,9 @@ public class PlayerAnimation : MonoBehaviour
         RestartPosition();
     }
 
+    /**
+        Sets current animation of the player.
+     */
     public void SetAnimation(EnumPlayerAnimation animation)
     {
         if (animation == _animationState)
@@ -56,6 +59,9 @@ public class PlayerAnimation : MonoBehaviour
         _animationState = animation;
     }
 
+    /**
+        Clears effects of animation of the player.
+     */
     void RestartPosition()
     {
         _frame = 0;
@@ -88,6 +94,9 @@ public class PlayerAnimation : MonoBehaviour
         _frame %= 240;
     }
 
+    /**
+        Animation of the player in idle state.
+     */
     void IdleAnimation()
     {
         if (_frame < 120)
@@ -108,6 +117,9 @@ public class PlayerAnimation : MonoBehaviour
         }
     }
 
+    /**
+        Animation of the player in jump state.
+     */
     void JumpAnimation()
     {
         var legStep = 0.5f;

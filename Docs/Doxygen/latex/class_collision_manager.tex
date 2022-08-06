@@ -1,0 +1,92 @@
+\hypertarget{class_collision_manager}{}\doxysection{Collision\+Manager Class Reference}
+\label{class_collision_manager}\index{CollisionManager@{CollisionManager}}
+Inheritance diagram for Collision\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_collision_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_collision_manager_af69481b6e8a229ce0f22a5208887c3fa}{On\+Player\+Collision\+With\+Platform}} (\mbox{\hyperlink{class_platform}{Platform}} platform, \mbox{\hyperlink{class_player}{Player}} player, Collision2D collision)
+\item 
+void \mbox{\hyperlink{class_collision_manager_af3b1bded19e05814b9dd631d2abfe8f5}{On\+Player\+Collision\+With\+Destroyer}} (\mbox{\hyperlink{class_destroyer}{Destroyer}} destroyer, \mbox{\hyperlink{class_player}{Player}} player)
+\item 
+void \mbox{\hyperlink{class_collision_manager_ab34e85335a485c3c6c1d7e84b2111273}{On\+Player\+Collision\+With\+Coin}} (\mbox{\hyperlink{class_coin}{Coin}} coin, \mbox{\hyperlink{class_player}{Player}} player)
+\item 
+void \mbox{\hyperlink{class_collision_manager_a61fb00d0d3aba33662d9be3212f7e882}{On\+Player\+Collision\+With\+Chest}} (\mbox{\hyperlink{class_chest}{Chest}} chest, \mbox{\hyperlink{class_player}{Player}} player)
+\item 
+void \mbox{\hyperlink{class_collision_manager_a63f1f82997af384f18ed0bf9f98d5b1b}{On\+Platform\+Collision\+With\+Destroyer}} (\mbox{\hyperlink{class_destroyer}{Destroyer}} destroyer, \mbox{\hyperlink{class_platform}{Platform}} platform)
+\item 
+void \mbox{\hyperlink{class_collision_manager_a6c9b76ae372c6127f862ac55283b9b70}{On\+Coin\+Collision\+With\+Destroyer}} (\mbox{\hyperlink{class_destroyer}{Destroyer}} destroyer, \mbox{\hyperlink{class_coin}{Coin}} coin)
+\item 
+void \mbox{\hyperlink{class_collision_manager_a26408542f0736d8e9ed165a7945cac27}{On\+Chest\+Collision\+With\+Destroyer}} (\mbox{\hyperlink{class_destroyer}{Destroyer}} destroyer, \mbox{\hyperlink{class_chest}{Chest}} chest)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_manager}{Game\+Manager}} \mbox{\hyperlink{class_collision_manager_a6a153fef1da782b7e6dc5ceb1c3cb87b}{Game\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collision manager class 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collision_manager_a26408542f0736d8e9ed165a7945cac27}\label{class_collision_manager_a26408542f0736d8e9ed165a7945cac27}} 
+\index{CollisionManager@{CollisionManager}!OnChestCollisionWithDestroyer@{OnChestCollisionWithDestroyer}}
+\index{OnChestCollisionWithDestroyer@{OnChestCollisionWithDestroyer}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnChestCollisionWithDestroyer()}{OnChestCollisionWithDestroyer()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Chest\+Collision\+With\+Destroyer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_destroyer}{Destroyer}}}]{destroyer,  }\item[{\mbox{\hyperlink{class_chest}{Chest}}}]{chest }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_chest}{Chest}} collision with destroyer logic \mbox{\Hypertarget{class_collision_manager_a6c9b76ae372c6127f862ac55283b9b70}\label{class_collision_manager_a6c9b76ae372c6127f862ac55283b9b70}} 
+\index{CollisionManager@{CollisionManager}!OnCoinCollisionWithDestroyer@{OnCoinCollisionWithDestroyer}}
+\index{OnCoinCollisionWithDestroyer@{OnCoinCollisionWithDestroyer}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnCoinCollisionWithDestroyer()}{OnCoinCollisionWithDestroyer()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Coin\+Collision\+With\+Destroyer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_destroyer}{Destroyer}}}]{destroyer,  }\item[{\mbox{\hyperlink{class_coin}{Coin}}}]{coin }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_coin}{Coin}} collision with destroyer logic \mbox{\Hypertarget{class_collision_manager_a63f1f82997af384f18ed0bf9f98d5b1b}\label{class_collision_manager_a63f1f82997af384f18ed0bf9f98d5b1b}} 
+\index{CollisionManager@{CollisionManager}!OnPlatformCollisionWithDestroyer@{OnPlatformCollisionWithDestroyer}}
+\index{OnPlatformCollisionWithDestroyer@{OnPlatformCollisionWithDestroyer}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnPlatformCollisionWithDestroyer()}{OnPlatformCollisionWithDestroyer()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Platform\+Collision\+With\+Destroyer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_destroyer}{Destroyer}}}]{destroyer,  }\item[{\mbox{\hyperlink{class_platform}{Platform}}}]{platform }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_platform}{Platform}} collision with destroyer logic \mbox{\Hypertarget{class_collision_manager_a61fb00d0d3aba33662d9be3212f7e882}\label{class_collision_manager_a61fb00d0d3aba33662d9be3212f7e882}} 
+\index{CollisionManager@{CollisionManager}!OnPlayerCollisionWithChest@{OnPlayerCollisionWithChest}}
+\index{OnPlayerCollisionWithChest@{OnPlayerCollisionWithChest}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerCollisionWithChest()}{OnPlayerCollisionWithChest()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Player\+Collision\+With\+Chest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chest}{Chest}}}]{chest,  }\item[{\mbox{\hyperlink{class_player}{Player}}}]{player }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_player}{Player}} collision with chest logic \mbox{\Hypertarget{class_collision_manager_ab34e85335a485c3c6c1d7e84b2111273}\label{class_collision_manager_ab34e85335a485c3c6c1d7e84b2111273}} 
+\index{CollisionManager@{CollisionManager}!OnPlayerCollisionWithCoin@{OnPlayerCollisionWithCoin}}
+\index{OnPlayerCollisionWithCoin@{OnPlayerCollisionWithCoin}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerCollisionWithCoin()}{OnPlayerCollisionWithCoin()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Player\+Collision\+With\+Coin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_coin}{Coin}}}]{coin,  }\item[{\mbox{\hyperlink{class_player}{Player}}}]{player }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_player}{Player}} collision with coin logic \mbox{\Hypertarget{class_collision_manager_af3b1bded19e05814b9dd631d2abfe8f5}\label{class_collision_manager_af3b1bded19e05814b9dd631d2abfe8f5}} 
+\index{CollisionManager@{CollisionManager}!OnPlayerCollisionWithDestroyer@{OnPlayerCollisionWithDestroyer}}
+\index{OnPlayerCollisionWithDestroyer@{OnPlayerCollisionWithDestroyer}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerCollisionWithDestroyer()}{OnPlayerCollisionWithDestroyer()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Player\+Collision\+With\+Destroyer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_destroyer}{Destroyer}}}]{destroyer,  }\item[{\mbox{\hyperlink{class_player}{Player}}}]{player }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_player}{Player}} collision with destroyer logic \mbox{\Hypertarget{class_collision_manager_af69481b6e8a229ce0f22a5208887c3fa}\label{class_collision_manager_af69481b6e8a229ce0f22a5208887c3fa}} 
+\index{CollisionManager@{CollisionManager}!OnPlayerCollisionWithPlatform@{OnPlayerCollisionWithPlatform}}
+\index{OnPlayerCollisionWithPlatform@{OnPlayerCollisionWithPlatform}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{OnPlayerCollisionWithPlatform()}{OnPlayerCollisionWithPlatform()}}
+{\footnotesize\ttfamily void Collision\+Manager.\+On\+Player\+Collision\+With\+Platform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_platform}{Platform}}}]{platform,  }\item[{\mbox{\hyperlink{class_player}{Player}}}]{player,  }\item[{Collision2D}]{collision }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{class_player}{Player}} collision with platform logic 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_collision_manager_a6a153fef1da782b7e6dc5ceb1c3cb87b}\label{class_collision_manager_a6a153fef1da782b7e6dc5ceb1c3cb87b}} 
+\index{CollisionManager@{CollisionManager}!GameManager@{GameManager}}
+\index{GameManager@{GameManager}!CollisionManager@{CollisionManager}}
+\doxysubsubsection{\texorpdfstring{GameManager}{GameManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_game_manager}{Game\+Manager}} Collision\+Manager.\+Game\+Manager}
+
+Reference to game manager 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/\+Polsl/\+AEI-\/\+Tower/\+AEI-\/\+Tower/\+Assets/\+Scripts/\+Managers/\mbox{\hyperlink{_collision_manager_8cs}{Collision\+Manager.\+cs}}\end{DoxyCompactItemize}

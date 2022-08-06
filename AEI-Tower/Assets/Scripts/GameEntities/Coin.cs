@@ -1,8 +1,11 @@
 using UnityEngine;
 
+/**
+    Coin class
+ */
 public class Coin : MonoBehaviour
 {
-    public CollisionManager CollisionManager;
+    public CollisionManager CollisionManager;   /*!< Reference to collision manager */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1,7 +1,9 @@
-using Assets.Scripts.UI;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ Enum of game views
+ */
 public enum EnumUIView
 {
     Game,
@@ -10,25 +12,25 @@ public enum EnumUIView
     Win,
 }
 
-
+/**
+ UI manager class
+ */
 public class UIManager : MonoBehaviour
 {
-    public GameObject GameUI;
-    public GameObject GameOverUI;
-    public GameObject MainMenuUI;
-    public GameObject WinUI;
+    public GameObject GameUI;                                           /*!< Reference to UI */
+    public GameObject GameOverUI;                                       /*!< Reference to game over view */
+    public GameObject MainMenuUI;                                       /*!< Reference to main menu view */
+    public GameObject WinUI;                                            /*!< Reference to win view */
 
-    public GameManager GameManager;
+    public GameManager GameManager;                                     /*!< Reference to game manager */
 
-    public List<Sprite> GameBackgrounds = new List<Sprite>();
-    public Sprite WinBackground;
-    private Queue<Sprite> _backgroundsQueue = new Queue<Sprite>();
+    public List<Sprite> GameBackgrounds = new List<Sprite>();           /*!< Collection of game backgrounds */
+    public Sprite WinBackground;                                        /*!< Reference to victory background */
+    private Queue<Sprite> _backgroundsQueue = new Queue<Sprite>();      /*!< Queue of game backgrounds */
 
-    private void Start()
-    {
-
-    }
-
+    /**
+     Reset state
+     */
     public void Reset()
     {
         if (GameBackgrounds.Count == 0)
@@ -45,6 +47,9 @@ public class UIManager : MonoBehaviour
         GameManager.EntitiesManager.Background.sprite = _backgroundsQueue.Dequeue();
     }
 
+    /**
+     Update UI on level up
+     */
     public void LevelUp()
     {
         if (GameBackgrounds.Count == 0)
@@ -62,6 +67,9 @@ public class UIManager : MonoBehaviour
         GameManager.EntitiesManager.Background.sprite = _backgroundsQueue.Dequeue();
     }
 
+    /**
+     Change game view
+     */
     public void SetView(EnumUIView uiView)
     {
         GameUI.SetActive(uiView == EnumUIView.Game);
@@ -75,6 +83,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /**
+     Display message
+     */
     public void DisplayMessage(string message)
     {
         GameUI.GetComponent<GameUI>().DisplayMessage(message);

@@ -3,55 +3,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+/**
+    Entities manager class
+ */
 public class EntitiesManager : MonoBehaviour
 {
-    public Player Player;
-    public MainCamera Camera;
-    public Destroyer Destroyer;
-    public SpriteRenderer Background;
-    public GameManager GameManager;
-    public ICollection<GameObject> Platforms = new List<GameObject>();
-    public ICollection<GameObject> Coins = new List<GameObject>();
-    public ICollection<GameObject> Chests = new List<GameObject>();
+    public Player Player;                                                       /*!< Reference to player */
+    public MainCamera Camera;                                                   /*!< Reference to camera */
+    public Destroyer Destroyer;                                                 /*!< Reference to destroyer */
+    public SpriteRenderer Background;                                           /*!< Reference to backgorund */
+    public GameManager GameManager;                                             /*!< Reference to game manager */
+    public ICollection<GameObject> Platforms = new List<GameObject>();          /*!< Collection of generated platforms */
+    public ICollection<GameObject> Coins = new List<GameObject>();              /*!< Collection of generated coins */
+    public ICollection<GameObject> Chests = new List<GameObject>();             /*!< Collection of generated chests */
 
-    public GameObject PlatformPrefab;
-    public GameObject CoinPrefab;
-    public GameObject ChestPrefab;
+    public GameObject PlatformPrefab;                                           /*!< Reference to player prefab */
+    public GameObject CoinPrefab;                                               /*!< Reference to coin prefab */
+    public GameObject ChestPrefab;                                              /*!< Reference to chest prefab */
 
-    public float MatrialsChance = 0.25f;
-    public float ChestChance = 0.10f;
+    public float MatrialsChance = 0.25f;                                        /*!< Chance of spawning materials. Effective range 0-1 */
+    public float ChestChance = 0.10f;                                           /*!< Chance of spawning chest. Effective range 0-1 */
 
-    Vector3 _lastPosition = new Vector3();
-    Rect _platformSpawningBounds = new Rect(-20, -5, 40, 5);
+    Vector3 _lastPosition = new Vector3();                                      /*!< Position of last generated platform */
+    Rect _platformSpawningBounds = new Rect(-20, -5, 40, 5);                    /*!< Area of spawning new platforms */
 
+    /**
+     Reset state
+     */
     public void Reset()
     {
         foreach (GameObject p in Platforms)
             Destroy(p);
-
         Platforms.Clear();
+
+        foreach (GameObject c in Chests)
+            Destroy(c);
+        Chests.Clear();
+
+        foreach (GameObject c in Coins)
+            Destroy(c);
+        Coins.Clear();
 
         _platformSpawningBounds = new Rect(-20, -5, 40, 5);
     }
 
+    /**
+     Remove platform
+     */
     public void RemovePlatform(GameObject platform)
     {
         Destroy(platform);
         Platforms.Remove(platform);
     }
 
+    /**
+     Remove coin
+     */
     public void RemoveCoin(GameObject coin)
     {
         Destroy(coin);
         Coins.Remove(coin);
     }
 
+    /**
+     Remove chest
+     */
     public void RemoveChest(GameObject chest)
     {
         Destroy(chest);
         Chests.Remove(chest);
     }
 
+    /**
+     Spawn platform
+     */
     public void SpawnPlatform()
     {
         _lastPosition.x = Random.Range(

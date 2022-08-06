@@ -1,13 +1,15 @@
 using UnityEngine;
 
+/** 
+ * Main camera class
+ */
 public class MainCamera : MonoBehaviour
 {
-    public bool EnableMovement = false;
+    public bool EnableMovement = false;                             /*!< Enables movement of the camera */
 
-    public float CameraSpeed = 0.01f;
-    public Vector3 InitialPosition = new Vector3(0f, 0f, -20f);
+    public float CameraSpeed = 0.01f;                               /*!< Speed of the camera */
+    public Vector3 InitialPosition = new Vector3(0f, 0f, -20f);     /*!< Initial position of the camera */
 
-    // Update is called once per frame
     void Update()
     {
         if (Camera.current != null && EnableMovement)
